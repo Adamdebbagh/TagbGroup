@@ -1,0 +1,481 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tagb Group</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+
+    <!-- Material Design Icons -->
+    <link href="../bower_components/googlefont.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- mdb core CSS -->
+    <link href="../bower_components/mdb/css/mdb.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="styles/main.scss">-->
+    <link rel="stylesheet" href="styles/mystyle.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="tagbgroupApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <!--Log in Modal-->
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4><i class="fa fa-user"></i> Login</h4>
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <div class="row">
+              <form class="col-md-12">
+                <div class="row">
+                  <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input id="sub-ver-email" type="tel" class="validate">
+                    <label for="sub-ver-email">Your email</label>
+                  </div>
+
+                  <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                  </div>
+                  <div class="text-center">
+                    <button type="button" class="btn btn-default waves-effect waves-light">Login</button>
+
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">Cancel</button>
+            <p>Not a member? <a href="#" id="registration" data-toggle="modal" data-target="#registrationModal">Sign Up</a></p>
+            <p>Forgot <a href="#">Password?</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Registration Modal-->
+    <!-- Modal -->
+    <div class="modal fade" id="registrationModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header text-center" style="padding:35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4><i class="fa fa-user"></i> Register with:</h4>
+            <a class="btn-floating btn-large fb-bg waves-effect waves-light"><i class="fa fa-facebook"> </i></a>
+            <a class="btn-floating btn-large tw-bg waves-effect waves-light"><i class="fa fa-twitter"> </i></a>
+            <a class="btn-floating btn-large gplus-bg waves-effect waves-light"><i class="fa fa-google-plus"> </i></a>
+            <a class="btn-floating btn-large li-bg waves-effect waves-light"><i class="fa fa-linkedin"> </i></a>
+            <a class="btn-floating btn-large git-bg waves-effect waves-light"><i class="fa fa-github"> </i></a>
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <div class="row">
+              <form class="col-md-12">
+                <div class="row">
+                  <h4 class="text-center">or:</h4>
+                  <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input id="useremail" type="tel" class="validate">
+                    <label for="useremail">Your email</label>
+                  </div>
+
+                  <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="userpassword" type="password" class="validate">
+                    <label for="userpassword">Password</label>
+                  </div>
+
+                  <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="password-rep" type="password" class="validate">
+                    <label for="password-rep">Repeat password</label>
+                  </div>
+
+
+
+                  <div class="text-center">
+                    <button type="button" class="btn btn-default btn-lg waves-effect waves-light">Sign up</button>
+                    <div class="subscription-checkbox">
+                      <form action="#">
+
+                        <input type="checkbox" id="test6" />
+                        <label for="test6">
+                          <p>Subscribe me to the Newsletter</p>
+                        </label>
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">Cancel</button>
+            <p>Already have an account? <a href="#">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Sidebar navigation -->
+    <ul id="nav-mobile" class="side-nav fixed">
+      <!-- Logo -->
+      <div class="logo-wrapper">
+        <a ui-sref="/"><img src="images/tagblogo.png" class="img-responsive logo"></a>
+      </div>
+      <!--Side Menu -->
+      <ul id="side-menu" class="menu">
+        <ul class="collapsible collapsible-accordion">
+          <li id="menu-item-1" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapsible collapsible-accordion menu-item-1">
+            <a class="collapsible-header  waves-effect waves-teal ">About Us</a>
+            <div class="collapsible-body">
+              <ul class="sub-menu">
+                <li id="menu-item-2" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-2"><a ui-sref="about-tagb">About Tag-B</a></li>
+                <li id="menu-item-3" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-3"><a ui-sref="company-news">Company news</a></li>
+                <li id="menu-item-4" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-4"><a ui-sref="management-team">Management Team</a></li>
+                <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-5"><a ui-sref="career">Career</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul class="collapsible collapsible-accordion">
+          <li id="menu-item-6" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapsible collapsible-accordion menu-item-6">
+            <a class="collapsible-header  waves-effect waves-teal ">Services</a>
+            <div class="collapsible-body">
+              <ul class="sub-menu">
+                <li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-7"><a ui-sref="parking-services">Parking Services</a></li>
+                <li id="menu-item-8" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-8"><a ui-sref="valet-services">Valet Services</a></li>
+                <li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-9"><a ui-sref="healthcare-services">HealthCare</a></li>
+                <li id="menu-item-10" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-10"><a ui-sref="transportation-services">Transportation</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul class="collapsible collapsible-accordion">
+          <li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children collapsible collapsible-accordion menu-item-11">
+            <a class="collapsible-header  waves-effect waves-teal ">Find Parking</a>
+            <div class="collapsible-body">
+              <ul class="sub-menu">
+                <li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-12"><a ui-sref="locations">Locations</a></li>
+                <li id="menu-item-13" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-13"><a ui-sref="make-payment" data-toggle="modal" data-target="#loginModal">Make Payment</a></li>
+                <li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-14"><a ui-sref="monthly-parking" data-toggle="modal" data-target="#registrationModal">Monthly Parking</a></li>
+                <li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-15"><a ui-sref="parking-forms">Parking Forms</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page collapsible collapsible-accordion menu-item-16"><a ui-sref="contactus">Contact Us</a></li>
+      </ul>
+    </ul>
+
+
+    <!-- Main Content-->
+    <main>
+      <!-- Main Navbar -->
+      <nav class="navbar navbar-colored yellow navbar-fixed-top z-depth-1" role="navigation">
+        <div class="container-fluid">
+          <div class="pull-left">
+            <div class="ham-nav visible-xs visible-sm">
+              <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hidden-lg"><i class="fa fa-bars"></i></a>
+            </div>
+          </div>
+          <!-- Navbar Icons -->
+          <div class="pull-right">
+            <ul class="list-inline text-center">
+              <li><a ui-sref="contactus" class="waves-effect"><i class="material-icons">email</i><br>Contact</a></li>
+              <li><a ui-sref="locations" class="waves-effect"><i class="material-icons">place</i><br>Locations</a></li>
+              <li><a ui-sref="#" class="waves-effect"><i class="material-icons">perm_identity</i><br>Account</a></li>
+              <li><a href="#" class="waves-effect" data-toggle="modal" data-target="#loginModal"><i class="material-icons">account_box</i><br>Log In</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <!-- UI-View -->
+      <div ui-view></div>
+
+
+
+
+      <!-- Footer with social buttons -->
+      <footer class="page-footer blue-grey">
+        <div class="container-fluid">
+          <h4 class="text-center white-text">Our Clients</h4><br>
+          <!-- Carousel -->
+          <div id="carousel-multi-item" class="carousel slide multiitem-car">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <!-- First slide -->
+              <div class="item active">
+                <!-- Row -->
+                <div class="row text-center">
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/stk.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card  hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/howarduniversity.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card  hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/artsphere.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.item -->
+
+              <!-- Second slide -->
+              <div class="item">
+                <!-- Row -->
+                <div class="row text-center">
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/stonefish.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/douglas.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/brookfield.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.item -->
+
+              <!-- Third slide -->
+              <div class="item">
+                <!-- Row -->
+                <div class="row text-center">
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/skanska.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/joneslang.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/ibiza.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.item -->
+
+              <!-- Fourth slide -->
+              <div class="item">
+                <!-- Row -->
+                <div class="row text-center">
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/bar7l.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/dirtyMartini.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+
+                  <!-- Card -->
+                  <div class="col-sm-4 item-card hidden-xs">
+                    <div class="card hoverable">
+                      <div class="card-image">
+                        <img src="images/kenwood_condos.jpg">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.Card -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.item -->
+
+            </div>
+            <!-- /.carousel-inner -->
+
+          </div>
+          <!-- /.carousel -->
+          <hr class="white-text">
+
+          <div class="row text-center wow fadeIn">
+            <h4 class="white-text">Find Us on social media</h4>
+            <a class="btn-sm-full fb-bg rectangle waves-effect waves-light"><i class="fa fa-facebook"> </i> <span>Facebook</span> </a>
+            <a class="btn-sm-full tw-bg rectangle waves-effect waves-light"><i class="fa fa-twitter"> </i> <span>Twitter</span></a>
+            <a class="btn-sm-full gplus-bg rectangle waves-effect waves-light"><i class="fa fa-google-plus"> </i> <span>Google +</span></a>
+            <a class="btn-sm-full ins-bg rectangle waves-effect waves-light"><i class="fa fa-instagram"> </i> <span>Instagram</span></a>
+          </div>
+        </div>
+        <br>
+        <div class="footer-copyright">
+          <div class="container-fluid text-center">
+            © 2016 Copyright
+            <a class="grey-text text-lighten-4 right" href="https://tagbgroup.com/">TagBGroup.com</a>
+          </div>
+        </div>
+      </footer>
+      <!--/. Footer with social buttons -->
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- mdb core JavaScript -->
+    <script src="../bower_components/mdb/js/mdb.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        // Initialize collapse button
+        $(".button-collapse").sideNav();
+        // Initialize collapsible
+        $('.collapsible').collapsible();
+        $('.carousel').carousel();
+        $("#registration").click(function(){
+          $("#loginModal").modal('hide');
+        });
+      });
+    </script>
+    <!--<script src="../bower_components/mdb/js/cbpFWTabs.js"></script>-->
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/aboutus.js"></script>
+    <script src="scripts/controllers/companynews.js"></script>
+    <script src="scripts/controllers/managementteam.js"></script>
+    <script src="scripts/controllers/career.js"></script>
+    <script src="scripts/controllers/parkingservices.js"></script>
+    <script src="scripts/controllers/valetservices.js"></script>
+    <script src="scripts/controllers/transportationservices.js"></script>
+    <script src="scripts/controllers/healthcareservices.js"></script>
+    <script src="scripts/controllers/locations.js"></script>
+    <script src="scripts/controllers/makepayment.js"></script>
+    <script src="scripts/controllers/monthlyparking.js"></script>
+    <script src="scripts/controllers/parkingforms.js"></script>
+    <script src="scripts/controllers/contactus.js"></script>
+    <script src="scripts/directives/quote.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<section id="about" class="content-section">
+  <!-- Page Content -->
+  <div class="container-fluid">
+    <h1>Find a Locations</h1><br>
+    <div class="row">
+      <div class="col-md-5">
+        <input type="text" placeholder="Filter Locations" ng-model="search.$">
+
+      </div>
+    </div><br>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Location Name</th>
+        <th>Parking Options</th>
+        <th>Address</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="location in locations |filter:search ">
+        <td>{{location.name}}</td>
+        <td>{{location.options}}</td>
+        <td>{{location.address}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</section>
+

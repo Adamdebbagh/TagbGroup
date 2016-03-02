@@ -1,0 +1,46 @@
+
+<!--Content-->
+<section id="about" class="content-section">
+  <!-- Page Content -->
+  <div class="container-fluid">
+
+    <div class="row">
+      <!-- Services -->
+      <div class="col-md-8">
+        <h2 class="h2-responsive blue-grey-text text-center page-header">
+          <div class="panel panel-blue ">
+            <div class="panel-body"> Download Forms</div>
+            <button type="button" class="btn btn-success waves-effect waves-light">Download Monthly Parking Form Here</button>
+          </div>
+        </h2>
+
+        <p>{{forms.intro}}</p>
+        <p>
+          <span ng-repeat="fee in forms.list"><i class="fa fa-chevron-right"></i> {{fee.monthlyfee}}<br></span>
+
+        </p>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+        <div class="services-sidebar">
+          <!--  Services Well -->
+
+          <!-- Category widget -->
+          <h4>Services</h4>
+          <div class="collection">
+            <a href="#" class="collection-item">Parking Services</a>
+            <a href="#" class="collection-item active">Apply for Monthly Services</a>
+            <a href="#" class="collection-item">Valet Services</a>
+            <a href="#" class="collection-item ">Transportation Services</a>
+            <a href="#" class="collection-item">Health Care Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+</section>

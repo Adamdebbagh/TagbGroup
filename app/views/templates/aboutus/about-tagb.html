@@ -1,0 +1,79 @@
+
+    <!-- About Us & Core Values-->
+    <section class="core-section clearfix">
+        <div class="container-fluid page-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="tabs">
+                <ul class="nav nav-tabs tabs-3">
+                  <li ng-repeat="tab in tabs"
+                    ng-class="{active:isActiveTab(tab.url)}"
+                    ng-click="onClickTab(tab)">{{tab.title}}</li>
+                </ul>
+
+                <div class="tab-content card-panel blue-grey lighten-5">
+              <div ng-include="currentTab"></div>
+            </div>
+          </div>
+
+
+              <script type="text/ng-template" id="aboutus">
+                <div class="tab-pane fade in active">
+                  <br>
+                  <h3 class=" h3-responsive text-center blue-grey-text">{{aboutus.title}}</h3>
+                  <p>{{aboutus.intro}}</p>
+                  <div class="panel-group">
+                    <div class="panel panel-default" ng-repeat="company in aboutus.companies">
+                      <div class="panel-body"><span class="company"><i class="fa fa-car"></i> {{company.title}} –</span> {{company.content}}</div>
+                    </div>
+                  </div>
+                </div>
+          </script>
+
+          <script type="text/ng-template" id="corevalues">
+            <div>
+              <br>
+              <h3 class="h3-responsive text-center blue-grey-text">Core Values</h3>
+              <div class="panel-group" id="accordion">
+                <div class="panel panel-default" ng-repeat="value in coreValues">
+                  <div class="panel-heading">
+                    <h1 class="panel-title">
+                      <a data-toggle="collapse" href="" data-target="#{{$index}}"><i class="material-icons">arrow_drop_down_circle</i> {{value.title}}</a>
+                    </h1>
+                  </div>
+                  <div id="{{$index}}" class="panel-collapse collapse in">
+                    <div class="panel-body">{{value.content}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+
+          <script type="text/ng-template" id="mission">
+            <div>
+              <br>
+              <h3 class="h3-responsive text-center blue-grey-text">{{missions.title}}</h3><br>
+              <p>{{missions.intro}}</p>
+              <div class="panel panel-success ">
+                <div class="panel-body " ng-repeat="mission in missions.list">
+                  <i class="fa fa-chevron-right"></i> {{mission.mission}}</div>
+              </div>
+
+
+
+
+            </div>
+
+          </script>
+            </div>
+          </div>
+        </div>
+    </section>
+
+<!--------------->
+
+
+
+
+
+

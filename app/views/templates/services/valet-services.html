@@ -1,0 +1,56 @@
+ <!--Content-->
+ <section id="about" class="content-section">
+        <!-- Page Content -->
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Services -->
+                <div class="col-md-8">
+                    <h2 class="h2-responsive blue-grey-text text-center page-header">
+                        <div class="panel panel-blue ">
+                            <div class="panel-body"> Get a Quote Today<br> 202-234-7775</div>
+                        </div>
+                    </h2>
+
+                    <p>{{valetServices.intro}}</p>
+                    <div class="panel-group">
+                        <div class="panel panel-default" ng-repeat="service in valetServices.list ">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="" data-target="#{{$index}}"><i class="material-icons">arrow_drop_down_circle</i> {{service.title}}</a>
+                                </h4>
+                            </div>
+                            <div id='{{$index}}' class="panel-collapse collapse">
+                                <div class="panel-body">{{service.content}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widgets Column -->
+                <div class="col-md-4">
+                    <div class="services-sidebar">
+                        <!-- Blog Search Well -->
+
+                        <!-- Category widget -->
+                        <h4>Services</h4>
+                        <div class="collection">
+                            <a href="#" class="collection-item">Parking Services</a>
+                            <a href="#" class="collection-item">Apply for Monthly Services</a>
+                            <a href="#" class="collection-item active">Valet Services</a>
+                            <a href="#" class="collection-item">Transportation Services</a>
+                            <a href="#" class="collection-item">Health Care Services</a>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>
