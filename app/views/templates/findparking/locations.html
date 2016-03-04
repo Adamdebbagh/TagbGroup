@@ -5,7 +5,6 @@
     <div class="row">
       <div class="col-md-5">
         <input type="text" placeholder="Filter Locations" ng-model="search.$">
-
       </div>
     </div><br>
     <table class="table table-hover">
@@ -18,14 +17,188 @@
       </thead>
       <tbody>
       <tr ng-repeat="location in locations |filter:search ">
-        <td>{{location.name}}</td>
-        <td>{{location.options}}</td>
-        <td>{{location.address}}</td>
+        <td data-toggle="modal" data-target="#location-look" style="cursor:pointer" ng-click="selectLocation($index)">{{location.name}}</td>
+        <td data-toggle="modal" data-target="#location-look" style="cursor:pointer" ng-click="selectLocation($index)">{{location.options}}</td>
+        <td data-toggle="modal" data-target="#location-look" style="cursor:pointer" ng-click="selectLocation($index)">{{location.address}}</td>
       </tr>
-
       </tbody>
     </table>
-  </div>
 
+  </div>
 </section>
+
+
+<!-- Modal: QUick look -->
+<div class="modal fade" id="location-look" role="dialog" data-backdrop="" ng-if="locationOpened">
+  <div class="modal-dialog modal-qlook">
+
+    <!--Modal content-->
+    <div class="modal-content">
+
+      <!-- Modal header-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">{{location.name}} </h4>
+      </div>
+      <!-- /.Modal header-->
+
+      <!-- Modal body-->
+      <div class="modal-body">
+        <!--Product Panel-->
+        <div class="container-fluid">
+          <div class="product-panel">
+            <div class="row">
+              <!--First column: carousel gallery-->
+              <div class="col-xs-12 col-sm-6 col-lg-6">
+                <!-- Carousel -->
+                <div id="car-gall" class="carousel slide carousel-fade carousel-thumbnails carousel-gallery">
+                  <!--Main image-->
+                  <div class="col-xs-8">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner z-depth-1 hoverable" role="listbox">
+                      <!-- First slide -->
+                      <div class="item active">
+                        <img src="{{location.slides[0].image}}" class="img-responsive slide-img"  alt="slide1" >
+                      </div>
+                      <!-- /.item -->
+
+                      <!-- Second slide -->
+                      <div class="item">
+                        <img src="{{location.slides[1].image}}" class="img-responsive slide-img"  alt="slide2">
+                      </div>
+                      <!-- /.item -->
+
+                      <!-- Third slide -->
+                      <div class="item">
+                        <img src="{{location.slides[2].image}}" class="img-responsive slide-img" alt="slide3">
+                      </div>
+                      <!-- /.item -->
+                    </div>
+                    <!-- /.carousel-inner -->
+                  </div>
+                  <!--/.Main image-->
+
+                  <!-- Indicators -->
+                  <div class="col-xs-4">
+                    <ul class="carousel-indicators">
+                      <li data-target="#car-gall" data-slide-to="{{$index}}"
+                          class="active" ng-repeat="slide in location.slides">
+                        <img src="{{slide.image}}" class="img-responsive z-depth-1 hoverable">
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Indicators -->
+                </div>
+                <!-- /.carousel -->
+              </div>
+              <!--/.First column: carousel gallery-->
+
+              <!--Second column: product details-->
+              <div class="col-xs-12 col-sm-6 col-lg-3">
+                <!--Title-->
+                <h4>{{location.options}}<br>
+                  <span class="label yellow accent-2">{{location.dailyrate | currency}}</span>
+                </h4>
+                <!--Price-->
+                <div class="price" ng-if="monthlyfee">
+                  <p class="green-text medium-500" >{{location.monthlyrate | currency}} per month</p>
+                </div>
+                <div class="price" ng-if="valetfee">
+                  <p class="green-text medium-500" >{{location.valetrate | currency}} for Valet</p>
+                </div>
+                <!--Select-->
+                <div class="row">
+                  <div class="col-md-8">
+                    <input type="number" placeholder="Book a spot" min="1" max="20">
+                  </div>
+                </div>
+                <!--Quantity-->
+                 <a class="btn btn-default waves-effect waves-light">Pay now</a>
+                <!--Wish list button-->
+                <a class="btn-floating btn-small waves-effect waves-light light-blue top-btn"
+                   data-toggle="tooltip" data-placement="right" data-original-title="Add likes"
+                   ng-click="count()"><i class="fa fa-thumbs-o-up"></i></a> <span class="text-success">{{counter}} likes</span>
+                <br>
+              </div>
+              <!--Second column: product details-->
+              <!--Third column: product description-->
+              <div class="col-xs-12 col-sm-12 col-lg-2">
+                <h5>description</h5>
+                <hr>
+                <p>{{location.description}}</p> <br>
+
+                <div class="text-center">
+                  <a class="btn btn-default btn-lg waves-effect waves-light" data-toggle="modal" data-target="#map-modal" ng-click="getDirection()">Get Direction</a>
+                </div>
+              </div>
+              <!--/.Third column: product description-->
+
+            </div>
+          </div>
+        </div>
+        <!--/.Product Panel-->
+      </div>
+      <!-- /.Modal body-->
+      <!--Modal footer: close button-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">X</button>
+      </div>
+      <!--/.Modal footer: close button-->
+    </div>
+    <!-- Modal content-->
+  </div>
+</div>
+<!--/.Modal: QUick look -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="map-modal" role="dialog" data-backdrop="" ng-if="mapOpened">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-cart" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">{{location.address}}</h4>
+      </div>
+      <div class="row" style="margin: 15px;">
+        <div class="col-sm-12">
+          <div style="width: 100%;  height: 100%">
+
+            <ng-map zoom="18" tilt="45" center="current-location"  map-type-id="ROADMAP">
+              <directions
+                draggable="false"
+                panel="directions-panel"
+                travel-mode="DRIVING"
+                origin="current-location"
+                destination={{location.address}}>
+              </directions>
+            </ng-map>
+          </div>
+        </div>
+        <!--Social media-->
+        <div class="text-center">
+        <a class="btn-floating btn-small ins-bg waves-effect waves-light"><i class="fa fa-phone"></i></a>
+        <a class="btn-floating btn-small email-bg waves-effect waves-light"><i class="fa fa-envelope-o"> </i></a>
+        <a class="btn-floating btn-small tw-bg waves-effect waves-light"><i class="fa fa-twitter"> </i></a>
+        <a class="btn-floating btn-small fb-bg waves-effect waves-light"><i class="fa fa-facebook"> </i></a>
+        <hr>
+        </div>
+       </div>
+      <div class="row">
+        <div class="sm-12">
+          <div id="directions-panel" style="width: 95%;  height: 100%; overflow: auto; padding: 0px 20px"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeMap()">Close</button>
+      </div>
+    </div>
+      </div>
+
+
+
+  </div>
+</div>
+<!-- Modal -->
 

@@ -4,12 +4,12 @@
  * @ngdoc directive
  * @name tagbgroupApp.directive:quote
  * @description
- * # quote
+ * # sideBarWidget
  */
 angular.module('tagbgroupApp')
-  .directive('quote', function () {
+  .directive('sideBarWidget', function () {
     return {
       restrict: 'E',
-      templateUrl: './views/templates/directives/quote.html',
+      templateUrl: './views/templates/directives/sidebarwidget.html',
     };
   });

@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('tagbgroupApp', ['ui.router'])
+  .module('tagbgroupApp', ['ui.router','ngMap'])
   .config(function($stateProvider, $urlRouterProvider) {
 
     // For any unmatched url, redirect to /state1

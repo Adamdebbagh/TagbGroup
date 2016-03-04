@@ -108,7 +108,7 @@ angular.module('tagbgroupApp')
             {mission:' Providing revenue control'},
             {mission:' Innovating to improve service'}
           ]
-        }
+        };
 
 
         $scope.onClickTab = function (tab) {
@@ -116,8 +116,8 @@ angular.module('tagbgroupApp')
         };
 
         $scope.isActiveTab = function(tabUrl) {
-          return tabUrl == $scope.currentTab;
-        }
+          return tabUrl === $scope.currentTab;
+        };
 
 
 
