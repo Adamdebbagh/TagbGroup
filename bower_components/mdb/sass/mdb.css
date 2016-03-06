@@ -1,0 +1,105 @@
+/*
+Error: ("lighten-5": #FFEBEE, "lighten-4": #FFCDD2, "lighten-3": #EF9A9A, "lighten-2": #E57373, "lighten-1": #EF5350, "base": #F44336, "darken-1": #E53935, "darken-2": #D32F2F, "darken-3": #C62828, "darken-4": #B71C1C, "accent-1": #FF8A80, "accent-2": #FF5252, "accent-3": #FF1744, "accent-4": #D50000) isn't a valid CSS value.
+        on line 31 of mdb/free/_mixins.scss, in `button-variant'
+        from line 203 of mdb/free/_buttons.scss
+        from line 33 of mdb.scss
+
+26: @import "mdb/free/normalize";
+27: 
+28: //Global
+29: @import "mdb/free/global";
+30: 
+31: // Components
+32: @import "mdb/free/roboto";
+33: @import "mdb/free/buttons";
+34: @import "mdb/free/navbar";
+35: @import "mdb/free/shadows";
+36: @import "mdb/free/typography";
+
+Backtrace:
+mdb/free/_mixins.scss:31:in `button-variant'
+mdb/free/_buttons.scss:203
+mdb.scss:33
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/script/value/map.rb:52:in `to_s'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:396:in `visit_prop'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:364:in `block (4 levels) in visit_mixin'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:364:in `map'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:364:in `block (3 levels) in visit_mixin'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:364:in `block (2 levels) in visit_mixin'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:84:in `perform_arguments'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:359:in `block in visit_mixin'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:98:in `block in with_mixin'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:98:in `with_mixin'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `map'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `map'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `block in with_import'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `with_import'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:361:in `watch_or_update'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/gems/sass-3.4.19/bin/scss:13:in `<top (required)>'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/bin/scss:23:in `load'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/bin/scss:23:in `<main>'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/adamdebbagh/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: (\"lighten-5\": #FFEBEE, \"lighten-4\": #FFCDD2, \"lighten-3\": #EF9A9A, \"lighten-2\": #E57373, \"lighten-1\": #EF5350, \"base\": #F44336, \"darken-1\": #E53935, \"darken-2\": #D32F2F, \"darken-3\": #C62828, \"darken-4\": #B71C1C, \"accent-1\": #FF8A80, \"accent-2\": #FF5252, \"accent-3\": #FF1744, \"accent-4\": #D50000) isn't a valid CSS value.\A         on line 31 of mdb/free/_mixins.scss, in `button-variant'\A         from line 203 of mdb/free/_buttons.scss\A         from line 33 of mdb.scss\A \A 26: @import \"mdb/free/normalize\";\A 27: \A 28: //Global\A 29: @import \"mdb/free/global\";\A 30: \A 31: // Components\A 32: @import \"mdb/free/roboto\";\A 33: @import \"mdb/free/buttons\";\A 34: @import \"mdb/free/navbar\";\A 35: @import \"mdb/free/shadows\";\A 36: @import \"mdb/free/typography\";"; }

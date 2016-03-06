@@ -1,0 +1,64 @@
+/*********************
+ Modals
+**********************/
+
+
+// Modal Bottom Sheet Style
+.modal.bottom-sheet {
+  top: auto;
+  bottom: -100%;
+  margin: 0;
+  width: 100%;
+  border-radius: 0;
+  will-change: bottom, opacity;
+  background-color: #fff;
+}
+
+.bottom-sheet .modal-content {
+    box-shadow: none;
+    border-bottom: none;
+}
+
+.bottom-sheet .modal-footer {
+    margin-bottom: 30px;
+    border-top: 0;
+}
+.lean-overlay {
+    position: fixed;
+    z-index:999;
+    top: -100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: #000;
+    display: none;
+    will-change: opacity;
+}
+    
+/*********************
+  Modal Login & Modal Register
+**********************/
+
+.cover-modal {
+    background-image: url(http://brandflow.pl/wp-content/uploads/2015/09/modal-cover1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+    label {
+        color: #000;
+    }
+}
+
+.modal-footer p {
+    font-size: 20px; 
+    margin-top: 13px;
+}
+
+.modal-body .subscription-checkbox {
+    margin-top: 30px;
+    p {
+        font-size: 25px;
+    }
+}

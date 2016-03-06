@@ -1,0 +1,30 @@
+/*********************
+  Double Navbar
+**********************/
+
+ .double-navbar { 
+    z-index: 9;
+    .navbar-brand {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        .fa {
+            margin-top: -1px;
+            margin-right: 10px;
+            font-size: 30px;
+        }
+    }
+    .navbar-toggle {
+        margin-top: 12px;
+    }
+    .navbar-right .material-icons {
+        font-size: 2rem;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+   .double-navbar .navbar-brand {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
