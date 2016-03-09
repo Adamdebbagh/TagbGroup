@@ -71,6 +71,7 @@
         </div>
       </div>
     </div>
+
     <!--Registration Modal-->
     <!-- Modal -->
     <div class="modal fade" id="registrationModal" role="dialog">
@@ -206,7 +207,8 @@
               <li><a ui-sref="contactus" class="waves-effect"><i class="material-icons">email</i><br>Contact</a></li>
               <li><a ui-sref="locations" class="waves-effect"><i class="material-icons">place</i><br>Locations</a></li>
               <li><a ui-sref="#" class="waves-effect"><i class="material-icons">perm_identity</i><br>Account</a></li>
-              <li><a href="#" class="waves-effect" data-toggle="modal" data-target="#loginModal"><i class="material-icons">account_box</i><br>Log In</a></li>
+              <li><a href="" class="waves-effect" data-toggle="modal" data-target="#loginModal">
+                <i class="material-icons">account_box</i><br>Log In</a></li>
             </ul>
           </div>
         </div>
@@ -415,7 +417,7 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <!-- JQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- mdb core JavaScript -->
@@ -439,7 +441,7 @@
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="../bower_components/ngmap/build/scripts/ng-map.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="scripts/google_maps.js"></script>
 
 
     <script src="scripts/app.js"></script>
@@ -460,6 +462,17 @@
     <script src="scripts/directives/quote.js"></script>
     <script src="scripts/directives/sidebarwidget.js"></script>
     <script src="scripts/directives/carousel.js"></script>
+    <script src="scripts/services/main.js"></script>
+    <script src="scripts/services/about.js"></script>
+    <script src="scripts/services/news.js"></script>
+    <script src="scripts/services/team.js"></script>
+    <script src="scripts/services/career.js"></script>
+    <script src="scripts/services/parking.js"></script>
+    <script src="scripts/services/valet.js"></script>
+    <script src="scripts/services/healthcare.js"></script>
+    <script src="scripts/services/transportation.js"></script>
+    <script src="scripts/services/location.js"></script>
+    <script src="scripts/services/form.js"></script>
     <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,10 @@
+<div class="tab-pane fade in active">
+  <br>
+  <h3 class=" h3-responsive text-center blue-grey-text">{{aboutus.title}}</h3>
+  <p>{{aboutus.intro}}</p>
+  <div class="panel-group">
+    <div class="panel panel-default" ng-repeat="company in aboutus.companies">
+      <div class="panel-body"><span class="company"><i class="fa fa-car"></i> {{company.title}} –</span> {{company.content}}</div>
+    </div>
+  </div>
+</div>

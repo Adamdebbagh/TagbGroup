@@ -28,8 +28,8 @@
 </section>
 
 
-<!-- Modal: QUick look -->
-<div class="modal fade" id="location-look" role="dialog" data-backdrop="" ng-if="locationOpened">
+<!-- Modal: Location Info -->
+<div class="modal fade" id="location-look" role="dialog" data-backdrop="" ng-if="locationSetting.locationOpened">
   <div class="modal-dialog modal-qlook">
 
     <!--Modal content-->
@@ -58,19 +58,19 @@
                     <div class="carousel-inner z-depth-1 hoverable" role="listbox">
                       <!-- First slide -->
                       <div class="item active">
-                        <img src="{{location.slides[0].image}}" class="img-responsive slide-img"  alt="slide1" >
+                        <img ng-src={{location.slides[0].image}} class="img-responsive slide-img"  alt="slide1" >
                       </div>
                       <!-- /.item -->
 
                       <!-- Second slide -->
                       <div class="item">
-                        <img src="{{location.slides[1].image}}" class="img-responsive slide-img"  alt="slide2">
+                        <img ng-src={{location.slides[1].image}} class="img-responsive slide-img"  alt="slide2">
                       </div>
                       <!-- /.item -->
 
                       <!-- Third slide -->
                       <div class="item">
-                        <img src="{{location.slides[2].image}}" class="img-responsive slide-img" alt="slide3">
+                        <img ng-src={{location.slides[2].image}} class="img-responsive slide-img" alt="slide3">
                       </div>
                       <!-- /.item -->
                     </div>
@@ -83,7 +83,7 @@
                     <ul class="carousel-indicators">
                       <li data-target="#car-gall" data-slide-to="{{$index}}"
                           class="active" ng-repeat="slide in location.slides">
-                        <img src="{{slide.image}}" class="img-responsive z-depth-1 hoverable">
+                        <img ng-src={{slide.image}} class="img-responsive z-depth-1 hoverable">
                       </li>
                     </ul>
                   </div>
@@ -92,7 +92,6 @@
                 <!-- /.carousel -->
               </div>
               <!--/.First column: carousel gallery-->
-
               <!--Second column: product details-->
               <div class="col-xs-12 col-sm-6 col-lg-3">
                 <!--Title-->
@@ -148,11 +147,11 @@
     <!-- Modal content-->
   </div>
 </div>
-<!--/.Modal: QUick look -->
+<!--/.Modal: Location Info -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="map-modal" role="dialog" data-backdrop="" ng-if="mapOpened">
+<!-- Map Modal -->
+<div class="modal fade" id="map-modal" role="dialog" data-backdrop="" ng-if="locationSetting.mapOpened">
   <div class="modal-dialog">
 
     <!-- Modal content-->
