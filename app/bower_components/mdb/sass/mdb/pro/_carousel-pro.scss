@@ -1,0 +1,99 @@
+/*********************
+Carousel Pro
+**********************/
+
+//Multiitem
+.multiitem-car {
+    margin-bottom: 100px;
+    .carousel-indicators li {
+        height: 20px;
+        width: 20px;
+        background-color: #000;
+        margin-bottom: -50px;
+    }
+    .carousel-indicators .active {
+        height: 25px;
+        width: 25px;
+        background-color: #000;
+    }
+    .carousel-control.left {
+        background: transparent;
+    }
+    .carousel-control.right {
+        background: transparent;
+    }
+    .carousel-indicators {
+        margin-bottom: -2em;
+    }
+    .card {
+        margin: 1px;
+    }
+    .card-content {
+        padding: 20px;
+    }
+}
+  
+@media only screen and (max-width: 992px) {
+    .multiitem-car {
+        .carousel-inner {
+            .row {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+        .carousel-control {
+            margin: -25px;
+        }
+    }
+}
+
+//Carousel with thumbnails
+.carousel-thumbnails {
+    #carousel-example-generic {
+        display: inline-block;
+    }
+    /*****************************/
+    /* Plugin styles */
+    ul.thumbnails-carousel {
+        padding: 5px 0 0 0;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+    ul.thumbnails-carousel .center {
+        display: inline-block;
+    }
+    ul.thumbnails-carousel li {
+        margin-right: 5px;
+        float: left;
+        cursor: pointer;
+        img {
+            max-width: 250px;
+        }
+    }
+    .controls-background-reset {
+        background: none !important;
+    }
+    .active-thumbnail {
+        opacity: 0.4;
+    }
+    .indicators-fix {
+        bottom: 70px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .carousel-thumbnails ul.thumbnails-carousel li {
+        img {
+            max-width: 150px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-thumbnails ul.thumbnails-carousel li {
+        img {
+            max-width: 50px;
+        }
+    }
+}

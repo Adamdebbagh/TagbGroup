@@ -31,7 +31,7 @@
     "phantomjs-prebuilt": "^2.1.4",
     "rimraf": "^2.4.0",
     "run-sequence": "^1.1.1",
-    "wiredep": "^2.2.2"
+    "wiredep": "^3.0.0"
   },
   "engines": {
     "node": ">=0.10.0"

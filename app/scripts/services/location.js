@@ -43,8 +43,8 @@ angular.module('tagbgroupApp')
      selectLocation : function (locationId) {
         locationSetting.locationOpened = true;
         locationSetting.location = locationSetting.locations[locationId];
-        locationSetting.monthlyfee = location.monthlyrate != 0;
-        locationSetting.valetfee = location.valetrate != 0;
+        locationSetting.monthlyfee = location.monthlyrate !== 0;
+        locationSetting.valetfee = location.valetrate !== 0;
 
     },
       likesCounter: function(){

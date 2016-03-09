@@ -16,7 +16,7 @@ var yeoman = {
 
 var paths = {
   scripts: [yeoman.app + '/scripts/**/*.js'],
-  styles: [yeoman.app + '/styles/**/*.scss'],
+  styles: [yeoman.app + '/styles/**/*.css'],
   test: ['test/spec/**/*.js'],
   testRequire: [
     yeoman.app + '/bower_components/angular/angular.js',
@@ -192,13 +192,13 @@ gulp.task('copy:extras', function () {
     .pipe(gulp.dest(yeoman.dist));
 });
 
-gulp.task('copy:fonts', function () {
-  return gulp.src(yeoman.app + '/fonts/**/*')
-    .pipe(gulp.dest(yeoman.dist + '/fonts'));
+gulp.task('copy:font', function () {
+  return gulp.src(yeoman.app + '/font/**/*')
+    .pipe(gulp.dest(yeoman.dist + '/font'));
 });
 
 gulp.task('build', ['clean:dist'], function () {
-  runSequence(['images', 'copy:extras', 'copy:fonts', 'client:build']);
+  runSequence(['images', 'copy:extras', 'copy:font', 'client:build']);
 });
 
 gulp.task('default', ['build']);

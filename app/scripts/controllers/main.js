@@ -26,7 +26,7 @@ angular.module('tagbgroupApp')
     $scope.sendFeedback = function() {
       console.log("The Feedback object : "+ $scope.feedback);
 
-      if ($scope.feedback.agree && ($scope.feedback.mychannel == "")&& !$scope.feedback.mychannel) {
+      if ($scope.feedback.agree && ($scope.feedback.mychannel === "")&& !$scope.feedback.mychannel) {
 
         $scope.invalidChannelSelection = true;
         console.log('incorrect');
