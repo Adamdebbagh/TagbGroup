@@ -8,8 +8,9 @@
  * Factory in the tagbgroupApp.
  */
 angular.module('tagbgroupApp')
-  .factory('about', function () {
-    var aboutus = {
+  .factory('about',['$http','baseURL', function ($http,baseURL) {
+
+   /* /!*var aboutus = {
       title:'About Tag B Group',
       intro: 'With over two decades of experience, Tag-B Group has become of one of the most recognizable franchises for professional transportation, parking management, garage management, and valet services in Washington D.C. Founded by Taweke Alemayehu, Tag-B Group has become an incorporated business compiled of six successful companies in the Washington D.C. Metropolitan area including:',
       companies: [
@@ -39,7 +40,7 @@ angular.module('tagbgroupApp')
         }
       ]
 
-    };
+    };*!/
     var coreValues = [
       {
         title:'We Offer Quality First',
@@ -76,7 +77,7 @@ angular.module('tagbgroupApp')
         {mission:' Providing revenue control'},
         {mission:' Innovating to improve service'}
       ]
-    };
+    };*/
     var tabs = [
       {
         title: 'About Us',
@@ -94,15 +95,8 @@ angular.module('tagbgroupApp')
     var currentTab = './views/templates/aboutus/_aboutus.html';
 
     return {
-      getAboutUs: function () {
-        return aboutus;
-      },
-      getCoreValues: function(){
-        return coreValues;
-      },
-      getMissions: function(){
-        return missions;
-      },
+
+      // Tabs Manipulation
 
       getTabs: function(){
         return tabs;
@@ -111,17 +105,26 @@ angular.module('tagbgroupApp')
 
         return currentTab;
       },
-
       onClickTab: function (tab) {
-         return tab.url;
-    },
+        return tab.url;
+      },
+      isActiveTab: function(tabUrl) {
+        return tabUrl == currentTab;
+      },
 
-    isActiveTab: function(tabUrl) {
-      return tabUrl === currentTab;
-    }
+
+      // Retrieve Data from the Server
+
+      getAboutUs: function () {
+        return $http.get(baseURL+"aboutus");
+      },
+      getCoreValues: function(){
+        return $http.get(baseURL+"coreValues");
+      },
+      getMissions: function(){
+        return $http.get(baseURL+"missions");
+      }
 
 
     };
-
-
-  });
+  }]);

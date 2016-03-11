@@ -1,0 +1,29 @@
+
+    <!--Sections-->
+
+    <!-- Page Content -->
+    <section id="about" class="team-section">
+        <div class="container-fluid">
+
+            <!-- Introduction Row -->
+            <div class="row">
+            <div class="col-lg-12">
+                <h1 class=" h1-responsive blue-grey-text text-center page-header">{{header.title}}</h1>
+                <p class="panel-body">{{header.intro}}</p>
+            </div>
+        </div>
+
+            <!-- Team Members Row -->
+            <div class="row intro-section">
+            <div class="col-lg-4 col-sm-6" ng-repeat="member in team">
+                <img class="img-circle team-img img-center hoverable" src={{member.image}} alt="">
+                <h6>{{member.name}}<br>
+                    <small>{{member.position}}</small>
+                    <br><small><i class="fa fa-envelope-o"></i> {{member.email}}</small>
+                </h6>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <!-- /.Section -->

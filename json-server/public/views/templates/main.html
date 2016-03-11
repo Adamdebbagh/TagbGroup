@@ -1,0 +1,186 @@
+
+
+<!--Sections-->
+<!-- Marketing Slides Section -->
+<section id="intro" class="intro-section">
+  <div class="container-fluid">
+    <div class="row">
+        <carousel links="links"></carousel>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="verticalcenter ">
+        <h1 class="h1-responsive text-center">{{aboutus.title}}</h1>
+        <span class=" flow-text grey-text text-darken-2">{{aboutus.intro}}
+          <a class="btn btn-info btn-sm" ui-sref="about-tagb">Read more</a>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+  <div class="container-fluid page-content">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class=" h1-responsive text-center">{{ourServices.title}}</h1>
+        <!-- Content Row -->
+        <div class="row">
+          <div class="col-md-4" ng-repeat="card in ourServices.cards">
+            <div class="card hoverable">
+              <div class="card-image">
+                <img ng-src={{card.image}}>
+              </div>
+              <div class="card-content service">
+                <p class="text-center">{{card.text}}</p>
+              </div>
+              <div class="card-action">
+                <button type="button" class="btn btn-primary waves-effect waves-light" ui-sref="{{card.link}}">Parking Services</button>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-4 -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contactus" class="contact-section section-white">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <!-- Contact section -->
+          <div class="col-md-8">
+            <h3>Contact Us</h3>
+            <!-- Form -->
+            <form class="col-md-12" name="feedbackForm" ng-submit="sendFeedback()" novalidate>
+
+              <div class="row">
+                <div class="input-field col-md-6">
+                  <div class="form-group" ng-class="{ 'has-error' : feedbackForm.firstname.$error.required && !feedbackForm.firstname.$pristine }">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="customerName" type="text"  name="customerName" class="validate" ng-model="feedback.customerName" required>
+                    <span ng-show="feedbackForm.customerName.$error.required && !feedbackForm.customerName.$pristine" class="help-block">Your name is required.</span>
+                    <label for="customerName">Your name</label>
+                  </div>
+                </div>
+                <div class="input-field col-md-6">
+                  <div class="form-group"  ng-class="{ 'has-error has-feedback' : feedbackForm.emailid.$invalid && !feedbackForm.emailid.$pristine }">
+                    <i class="material-icons prefix">email</i>
+                    <input id="emailid" type="email" name="emailid" class="validate" ng-model="feedback.email" required>
+                    <span ng-show="feedbackForm.emailid.$invalid && !feedbackForm.emailid.$pristine" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                     <span ng-show="(feedbackForm.emailid.$invalid ||
+                                        feedbackForm.emailid.$error.required) &&
+                                        !feedbackForm.emailid.$pristine"
+                           class="help-block">Enter a valid email address.</span>
+                    <label for="emailid">Your email</label>
+                  </div>
+                </div>
+                <div class="input-field col-md-12">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="telnum" type="tel" name="telnum" class="validate" ng-model="feedback.tel" required>
+                    <label for="telnum">Telephone</label>
+                </div>
+                  <div class="checkbox col-sm-5 col-sm-offset-2">
+                    <div  ng-class="{ 'has-error' : invalidChannelSelection }">
+                      <label>May we contact you?</label>
+                      <div class="switch">
+                        <label>
+                          <input type="checkbox" name="approve" value="" ng-model="feedback.agree">
+                          <span class="lever"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                <div class="col-sm-3 col-sm-offset-1" ng-show="feedback.agree">
+                      <select ng-model="feedback.mychannel"
+                              ng-options="channel.value as channel.label for channel in channels">
+                        <option value="">Tel. or Email?</option>
+                      </select>
+                  <span ng-show="invalidChannelSelection" class="help-block">Select an option.</span>
+                  </div>
+              </div>
+              <!-- Message -->
+              <form class="col-md-12">
+                <div class="row">
+                  <div class="input-field col-md-12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="feedback" name="feedback" class="materialize-textarea" ng-model="feedback.comments" ></textarea>
+                    <label for="feedback">Your message</label>
+                  </div>
+                </div>
+              </form>
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary " ng-disabled="feedbackForm.$invalid"><i class="fa fa-envelope-o"> </i> <span>Send</span></button>
+
+            </form>
+            </div>
+          <div class="col-xs-12 col-sm-3">
+            <h3>Your Current Feedback:</h3>
+            <p>{{feedback.customerName | uppercase }}</p>
+            <p>Contact Tel.: {{feedback.tel}}</p>
+            <p>Contact Email: {{feedback.email}}</p>
+            <p ng-show="feedback.agree">Contact by: {{feedback.mychannel}}</p>
+            <p>Comments: {{feedback.comments}}</p>
+          </div>
+
+
+          <!-- Contact details -->
+          <div class="col-md-4">
+            <br>
+            <br>
+            <h4>Contact details</h4>
+            <hr>
+            <ul class="contact-data">
+              <li><a class="btn-floating btn-small waves-effect waves-light blue-grey"><i class="material-icons">pin_drop</i></a>
+                <p class="text-center">1215 3rd Street Suite 200 NE Washington, DC 20002</p>
+              </li>
+              <br>
+              <li><a class="btn-floating btn-small waves-effect waves-light blue-grey"><i class="material-icons">phone</i></a>
+                <p class="text-center"> (202) 234-7775</p>
+              </li>
+              <br>
+              <li><a class="btn-floating btn-small waves-effect waves-light blue-grey"><i class="material-icons">email</i></a>
+                <p class="text-center">info@tagbgroup.com</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  $(document).ready(function () {
+    $('select').material_select();
+  });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@
  */
 angular
   .module('tagbgroupApp', ['ui.router','ngMap'])
+  .constant("baseURL", "http://localhost:3000/")
   .config(function($stateProvider, $urlRouterProvider) {
 
     // For any unmatched url, redirect to /state1

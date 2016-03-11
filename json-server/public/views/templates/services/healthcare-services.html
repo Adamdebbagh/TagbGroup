@@ -1,0 +1,44 @@
+ <!--Content-->
+    <section id="about" class="content-section">
+        <!-- Page Content -->
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Services -->
+                <div class="col-md-8">
+                    <h2 class="h2-responsive blue-grey-text text-center page-header">
+                        <div class="panel panel-blue ">
+                            <div class="panel-body"> Get a Quote Today<br> 202-234-7775</div>
+                            <button type="button" class="btn btn-success waves-effect waves-light">REQUEST A HEALTH CARE PARKING PROPOSAL</button>
+                        </div>
+                    </h2>
+
+                    <p>{{healthcareServices.intro}}</p>
+                    <h2 class="h2-responsive blue-grey-text text-center page-header">{{healthcareServices.title}}</h2>
+                    <p>{{healthcareServices.body}}</p>
+                    <div class="panel-group">
+                        <div class="panel panel-default" ng-repeat=" panel in healthcareServices.list">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="" data-target="#{{$index}}"><i class="material-icons">arrow_drop_down_circle</i> {{panel.title}}</a>
+                                </h4>
+                            </div>
+                            <div id="{{$index}}" class="panel-collapse collapse">
+                                <div class="panel-body">{{panel.content}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Sidebar Widgets Column -->
+                <div class="col-md-4">
+                  <side-bar-widget></side-bar-widget>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>

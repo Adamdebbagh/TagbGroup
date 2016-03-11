@@ -1,0 +1,46 @@
+
+        <section id="about" class="content-section">
+            <!-- Page Content -->
+            <div class="container-fluid">
+
+            <div class="row">
+                <!-- Blog Entries Column -->
+                <div class="col-md-8">
+                  <div ng-repeat="post in posts">
+                    <!-- First Blog Post -->
+                    <h2 class="h2-responsive blue-grey-text text-center page-header">
+                        {{post.title}}
+                    </h2>
+                    <p class="lead">
+                        by <a href="#">{{post.author}}</a>
+                    </p>
+                    <p> Posted on {{post.date | date}}</p>
+                    <hr>
+                    <img class="img-responsive z-depth-2" src={{post.image}} alt="">
+                    <hr>
+                    <p>{{post.excerpt}}</p>
+                    <button type="button" class="btn btn-default waves-effect waves-light">Read more</button>
+
+                    <hr>
+                  </div>
+                    <!-- Pager -->
+                    <ul class="pager">
+                        <li class="previous">
+                            <a href="#">&larr; Older</a>
+                        </li>
+                        <li class="next">
+                            <a href="#">Newer &rarr;</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Blog Sidebar Widgets Column -->
+                <div class="col-md-4">
+                    <side-bar-widget></side-bar-widget>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+            <!-- /.container -->
+        </section>
+

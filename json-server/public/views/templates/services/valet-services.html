@@ -1,0 +1,34 @@
+ <!--Content-->
+ <section id="about" class="content-section">
+        <!-- Page Content -->
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Services -->
+                <div class="col-md-8">
+                    <quote></quote>
+                    <p>{{valetServices.intro}}</p>
+                    <div class="panel-group">
+                        <div class="panel panel-default" ng-repeat="service in valetServices.list ">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="" data-target="#{{$index}}"><i class="material-icons">arrow_drop_down_circle</i> {{service.title}}</a>
+                                </h4>
+                            </div>
+                            <div id='{{$index}}' class="panel-collapse collapse">
+                                <div class="panel-body">{{service.content}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widgets Column -->
+                <div class="col-md-4">
+                  <side-bar-widget></side-bar-widget>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>

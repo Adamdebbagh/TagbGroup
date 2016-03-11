@@ -1,0 +1,29 @@
+
+    <!--Content-->
+    <section id="about" class="content-section">
+        <!-- Page Content -->
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Services -->
+                <div class="col-md-8">
+                    <quote></quote>
+                    <p>{{transportationServices.intro}}</p>
+                    <p>
+                            <span ng-repeat=" provided in transportationServices.services">
+                              <i class="fa fa-chevron-right"></i> {{provided.service}}<br>
+                            </span>
+
+                    </p>
+                    <p>{{transportationServices.content}}</p>
+
+                </div>
+
+                <!-- Sidebar Widgets Column -->
+              <side-bar-widget></side-bar-widget>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>

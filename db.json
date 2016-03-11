@@ -1,0 +1,33 @@
+{
+  "aboutus": {
+    "title": "About Tag B Group",
+    "intro": "With over two decades of experience, Tag-B Group has become of one of the most recognizable franchises for professional transportation, parking management, garage management, and valet services in Washington D.C. Founded by Taweke Alemayehu, Tag-B Group has become an incorporated business compiled of six successful companies in the Washington D.C. Metropolitan area including:",
+    "companies": [
+      {
+        "title": "Tag-B Valet",
+        "content":"offering valet services at special events, commercial and private establishments, as well as hospitals and healthcare buildings."
+      },
+      {
+        "title": "Tag-B Parking Management",
+        "content":"providing garage management as well as special event, private party, commercial, hospital and healthcare parking services"
+      },
+      {
+        "title": "Tag-B Transportation",
+        "content":"supplying transportation services such as taxi, limo, van, shuttle, bus and private car options within the DC Metropolitan area. Handicap accessible services are also available."
+      },
+      {
+        "title": "Tag-B Ventures",
+        "content":"bringing entertainment to the residents of the DC metropolitan area through bars, night clubs, lounges and restaurants."
+      },
+      {
+        "title": "Tag-B Financial ",
+        "content":"offering financial services on a global scale with a focus on remittances between the United States and the international community."
+      },
+      {
+        "title": "Tag-B Consulting",
+        "content":"providing business consulting services for businesses of all sizes both domestically and internationally."
+      }
+    ]
+
+  }
+}
